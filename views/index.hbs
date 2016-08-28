@@ -1,0 +1,37 @@
+<h1 class="header text-center">{{title}}</h1>
+
+<div class="row" style="margin-left: 374px;">
+    <a href="/newclass" class="btn btn-primary btn-large">Create Class</a>
+    <a href="/classes" class="btn btn-primary btn-large">View Classes</a>
+    {{#if data }}
+            <a href="/createlearners" class="btn btn-primary btn-large">Create Classroom Learners</a>
+    {{/if}}
+</div>
+
+{{#if data }}
+
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Class Name</th>
+                <th>Class Grade</th>
+                <th>View Class</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each data}}
+            <tr>
+                <td>{{className}}</td>
+                <td>{{classGrade}}</td>
+                <td><a href="/{{_id}}">View</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+{{else}}
+    <p>You don't have any class, please create them.</p>
+
+{{/if}}
+
+

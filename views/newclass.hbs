@@ -1,0 +1,52 @@
+<h1 class="header text-center">{{title}}</h1>
+
+<div class="row" style="margin-left: 455px;">
+    <a href="/" class="btn btn-primary btn-large">Home Page</a>
+    <a href="/classes" class="btn btn-primary btn-large">View Classes</a>
+</div>
+
+<fieldset>
+    <legend>
+        Create new Class
+    </legend>
+
+    {{#if error_message}}
+        <p class="alert alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{error_message}}
+        </p>
+    {{/if}}
+
+    {{#if message }}
+        <p class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{message}}
+        </p>
+    {{/if}}
+
+    <form action="newclass" method="post">
+        <div class="form-group">
+            <label>Class Name:</label>
+            <input type="text" name="class" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Grade:</label>
+            <select name="grade" class="form-control" >
+                <option value="1">Grade 1</option>
+                <option value="2">Grade 2</option>
+                <option value="3">Grade 3</option>
+                <option value="4">Grade 4</option>
+                <option value="5">Grade 5</option>
+                <option value="6">Grade 6</option>
+                <option value="7">Grade 7</option>
+                <option value="8">Grade 8</option>
+                <option value="9">Grade 9</option>
+                <option value="10">Grade 10</option>
+                <option value="11">Grade 11</option>
+                <option value="12">Grade 12</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+</fieldset>

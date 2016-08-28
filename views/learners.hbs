@@ -1,0 +1,49 @@
+<h1 class="header text-center">{{title}}</h1>
+
+<div class="row" style="margin-left: 455px;">
+    <a href="/newclass" class="btn btn-primary btn-large">Create Class</a>
+    <a href="/classes" class="btn btn-primary btn-large">View Classes</a>
+</div>
+
+{{#if message }}
+    <p class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{message}}
+    </p>
+{{/if}}
+
+<fieldset>
+    <legend>
+        Create Learners
+    </legend>
+
+    <form action="/createlearners" method="post">
+        <div class="form-group">
+            <label>Surname:</label>
+            <input type="text" name="surname" required class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" name="name" required class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Location:</label>
+            <input type="text" name="location" required class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Class Room</label>
+            <select class="form-control" name="classid" required>
+                {{#each data}}
+                    <option value="{{_id}}">{{className}} {{classGrade}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+
+    </form>
+
+</fieldset>
